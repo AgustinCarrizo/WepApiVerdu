@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IRagazziModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="GetCategoriasId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Ids" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi" />
+        <Function Name="GetClienteLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="contra" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetCotegorias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi" />
+        <Function Name="GetEmpreProducIdEmpresa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetEmpresaLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="contra" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetEmpresas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi" />
+        <Function Name="GetFormaDePago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi" />
+        <Function Name="GetFormaDePagoId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi" />
+        <Function Name="GetProductoID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetUltimaCompra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi" />
+        <Function Name="InsertCategoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="activo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="contra" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+          <Parameter Name="longitud" Type="varchar" Mode="In" />
+          <Parameter Name="latitud" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertCompras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="idEmpresa" Type="int" Mode="In" />
+          <Parameter Name="idCliente" Type="int" Mode="In" />
+          <Parameter Name="idFormaPago" Type="int" Mode="In" />
+          <Parameter Name="total" Type="varchar" Mode="In" />
+          <Parameter Name="fecha" Type="datetime" Mode="In" />
+          <Parameter Name="rechazo" Type="int" Mode="In" />
+          <Parameter Name="activo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertDetalleCompras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="idCompras" Type="int" Mode="In" />
+          <Parameter Name="idEmpresaProducto" Type="int" Mode="In" />
+          <Parameter Name="cantidad" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertEmpreProduc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="idProducto" Type="int" Mode="In" />
+          <Parameter Name="idEmpresa" Type="int" Mode="In" />
+          <Parameter Name="precio" Type="varchar" Mode="In" />
+          <Parameter Name="descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="preciodesc" Type="varchar" Mode="In" />
+          <Parameter Name="stock" Type="int" Mode="In" />
+          <Parameter Name="activo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertEmpresa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="logo" Type="varchar" Mode="In" />
+          <Parameter Name="rugro" Type="varchar" Mode="In" />
+          <Parameter Name="longitud" Type="varchar" Mode="In" />
+          <Parameter Name="latitud" Type="varchar" Mode="In" />
+          <Parameter Name="contrasenia" Type="varchar" Mode="In" />
+          <Parameter Name="activo" Type="int" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertFormaDepago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Forma" Type="varchar" Mode="In" />
+          <Parameter Name="Activo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="idCategoria" Type="int" Mode="In" />
+          <Parameter Name="activo" Type="int" Mode="In" />
+          <Parameter Name="foto" Type="blob" Mode="In" />
+        </Function>
+        <Function Name="ListadoComprasCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ListadoComprasEmpresa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ListadoProductoCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TodasCategorias" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi" />
+        <Function Name="UpdateCategoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="activo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="contra" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+          <Parameter Name="longitud" Type="varchar" Mode="In" />
+          <Parameter Name="latitud" Type="varchar" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateCompras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="rechazo" Type="int" Mode="In" />
+          <Parameter Name="activo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateEmpreProduc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="idProducto" Type="int" Mode="In" />
+          <Parameter Name="idEmpresa" Type="int" Mode="In" />
+          <Parameter Name="precio" Type="varchar" Mode="In" />
+          <Parameter Name="descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="preciodesc" Type="varchar" Mode="In" />
+          <Parameter Name="stock" Type="int" Mode="In" />
+          <Parameter Name="activo" Type="int" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateEmpresa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="logo" Type="varchar" Mode="In" />
+          <Parameter Name="rugro" Type="varchar" Mode="In" />
+          <Parameter Name="longitud" Type="varchar" Mode="In" />
+          <Parameter Name="latitud" Type="varchar" Mode="In" />
+          <Parameter Name="contra" Type="varchar" Mode="In" />
+          <Parameter Name="activo" Type="int" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateFormaDePago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Activo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateProductos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="foto" Type="blob" Mode="In" />
+          <Parameter Name="idCategoria" Type="int" Mode="In" />
+          <Parameter Name="activo" Type="int" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateUbicaion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="u711858828_IRagazzi">
+          <Parameter Name="longitud" Type="varchar" Mode="In" />
+          <Parameter Name="latitud" Type="varchar" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="IRagazziModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IRagazziModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="IRagazziEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="TodasCategorias" ReturnType="Collection(IRagazziModel.TodasCategorias_Result)" />
+          <FunctionImport Name="InsertCategoria">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="activo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateCategoria">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="activo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetCategoriasId" ReturnType="Collection(IRagazziModel.GetCategoriasId_Result)">
+          <Parameter Name="Ids" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetCotegorias" ReturnType="Collection(IRagazziModel.GetCotegorias_Result)" />
+          <FunctionImport Name="GetFormaDePago" ReturnType="Collection(IRagazziModel.GetFormaDePago_Result)" />
+          <FunctionImport Name="GetFormaDePagoId" ReturnType="Collection(IRagazziModel.GetFormaDePagoId_Result)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertFormaDepago">
+            <Parameter Name="Forma" Mode="In" Type="String" />
+            <Parameter Name="Activo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateFormaDePago">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Activo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertProducto">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="idCategoria" Mode="In" Type="Int32" />
+            <Parameter Name="activo" Mode="In" Type="Int32" />
+            <Parameter Name="foto" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="GetProducto" ReturnType="Collection(IRagazziModel.GetProducto_Result)" />
+          <FunctionImport Name="GetProductoID" ReturnType="Collection(IRagazziModel.GetProductoID_Result)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateProductos">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="foto" Mode="In" Type="Binary" />
+            <Parameter Name="idCategoria" Mode="In" Type="Int32" />
+            <Parameter Name="activo" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetCliente" ReturnType="Collection(IRagazziModel.GetCliente_Result)" />
+          <FunctionImport Name="GetClienteLogin" ReturnType="Collection(IRagazziModel.GetClienteLogin_Result)">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="contra" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertCliente">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="contra" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+            <Parameter Name="longitud" Mode="In" Type="String" />
+            <Parameter Name="latitud" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateCliente">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="contra" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+            <Parameter Name="longitud" Mode="In" Type="String" />
+            <Parameter Name="latitud" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateUbicaion">
+            <Parameter Name="longitud" Mode="In" Type="String" />
+            <Parameter Name="latitud" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetEmpresaLogin" ReturnType="Collection(IRagazziModel.GetEmpresaLogin_Result)">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="contra" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetEmpresas" ReturnType="Collection(IRagazziModel.GetEmpresas_Result)" />
+          <FunctionImport Name="InsertEmpresa">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="logo" Mode="In" Type="String" />
+            <Parameter Name="rugro" Mode="In" Type="String" />
+            <Parameter Name="longitud" Mode="In" Type="String" />
+            <Parameter Name="latitud" Mode="In" Type="String" />
+            <Parameter Name="contrasenia" Mode="In" Type="String" />
+            <Parameter Name="activo" Mode="In" Type="Int32" />
+            <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateEmpresa">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="logo" Mode="In" Type="String" />
+            <Parameter Name="rugro" Mode="In" Type="String" />
+            <Parameter Name="longitud" Mode="In" Type="String" />
+            <Parameter Name="latitud" Mode="In" Type="String" />
+            <Parameter Name="contra" Mode="In" Type="String" />
+            <Parameter Name="activo" Mode="In" Type="Int32" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertCompras">
+            <Parameter Name="idEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="idCliente" Mode="In" Type="Int32" />
+            <Parameter Name="idFormaPago" Mode="In" Type="Int32" />
+            <Parameter Name="total" Mode="In" Type="String" />
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="rechazo" Mode="In" Type="Int32" />
+            <Parameter Name="activo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertDetalleCompras">
+            <Parameter Name="idCompras" Mode="In" Type="Int32" />
+            <Parameter Name="idEmpresaProducto" Mode="In" Type="Int32" />
+            <Parameter Name="cantidad" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateCompras">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="rechazo" Mode="In" Type="Int32" />
+            <Parameter Name="activo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetUltimaCompra" ReturnType="Collection(IRagazziModel.GetUltimaCompar_Result)" />
+          <FunctionImport Name="GetEmpreProducIdEmpresa" ReturnType="Collection(IRagazziModel.GetEmpreProducIdEmpresa_Result)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertEmpreProduc">
+            <Parameter Name="idProducto" Mode="In" Type="Int32" />
+            <Parameter Name="idEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="precio" Mode="In" Type="String" />
+            <Parameter Name="descripcion" Mode="In" Type="String" />
+            <Parameter Name="preciodesc" Mode="In" Type="String" />
+            <Parameter Name="stock" Mode="In" Type="Int32" />
+            <Parameter Name="activo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ListadoProductoCliente" ReturnType="Collection(IRagazziModel.ListadoProductoCliente_Result)">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateEmpreProduc">
+            <Parameter Name="idProducto" Mode="In" Type="Int32" />
+            <Parameter Name="idEmpresa" Mode="In" Type="Int32" />
+            <Parameter Name="precio" Mode="In" Type="String" />
+            <Parameter Name="descripcion" Mode="In" Type="String" />
+            <Parameter Name="preciodesc" Mode="In" Type="String" />
+            <Parameter Name="stock" Mode="In" Type="Int32" />
+            <Parameter Name="activo" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ListadoComprasCliente" ReturnType="Collection(IRagazziModel.ListadoComprasCliente_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ListadoComprasEmpresa" ReturnType="Collection(IRagazziModel.ListadoComprasEmpresa_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetEmpresas_Result" >
+          <Property Type="Int32" Name="idEmpresa" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="String" Name="Logo" Nullable="false" />
+          <Property Type="String" Name="Rugro" Nullable="false" />
+          <Property Type="String" Name="Longitud" Nullable="false" />
+          <Property Type="String" Name="Latitud" Nullable="false" />
+          <Property Type="String" Name="Contrasenia" Nullable="false" />
+          <Property Type="Int32" Name="Activo" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="TodasCategorias_Result" />
+        <ComplexType Name="GetCategoriasId_Result" >
+          <Property Type="Int32" Name="idCategoria" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Int32" Name="Activo" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetCotegorias_Result" >
+          <Property Type="Int32" Name="idCategoria" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Int32" Name="Activo" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetFormaDePago_Result" >
+          <Property Type="Int32" Name="idFormaPago" Nullable="false" />
+          <Property Type="String" Name="Forma" Nullable="false" />
+          <Property Type="Int32" Name="Activo" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetFormaDePagoId_Result" >
+          <Property Type="Int32" Name="idFormaPago" Nullable="false" />
+          <Property Type="String" Name="Forma" Nullable="false" />
+          <Property Type="Int32" Name="Activo" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetProducto_Result" >
+          <Property Type="Int32" Name="idProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Int32" Name="idCategoria" Nullable="false" />
+          <Property Type="String" Name="Activo" Nullable="false" />
+          <Property Type="String" Name="Foto" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetProductoID_Result" >
+          <Property Type="Int32" Name="idProducto" Nullable="false" />
+          <Property Type="Int32" Name="idCategoria" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="String" Name="Activo" Nullable="false" />
+          <Property Type="String" Name="Foto" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetCliente_Result" >
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="String" Name="Contrasenia" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" />
+          <Property Type="String" Name="Telefono" Nullable="false" />
+          <Property Type="String" Name="Longitud" Nullable="false" />
+          <Property Type="String" Name="Latitud" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetClienteLogin_Result" >
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="String" Name="Contrasenia" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" />
+          <Property Type="String" Name="Telefono" Nullable="false" />
+          <Property Type="String" Name="Longitud" Nullable="false" />
+          <Property Type="String" Name="Latitud" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetEmpresaLogin_Result" >
+          <Property Type="Int32" Name="idEmpresa" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="String" Name="Logo" Nullable="false" />
+          <Property Type="String" Name="Rugro" Nullable="false" />
+          <Property Type="String" Name="Longitud" Nullable="false" />
+          <Property Type="String" Name="Latitud" Nullable="false" />
+          <Property Type="String" Name="Contrasenia" Nullable="false" />
+          <Property Type="Int32" Name="Activo" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetUltimaCompar_Result" >
+          <Property Type="Int32" Name="idCompras" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetEmpreProducIdEmpresa_Result" >
+          <Property Type="Int32" Name="idEmpreProduc" Nullable="false" />
+          <Property Type="Int32" Name="idEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="idProducto" Nullable="false" />
+          <Property Type="String" Name="Precio" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" />
+          <Property Type="String" Name="PrecioDesc" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="String" Name="Foto" Nullable="false" />
+          <Property Type="Int32" Name="Stokc" Nullable="false" />
+          <Property Type="String" Name="Activo" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ListadoProductoCliente_Result" >
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="String" Name="Precio" Nullable="false" />
+          <Property Type="String" Name="PrecioDesc" Nullable="false" />
+          <Property Type="String" Name="Foto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ListadoComprasCliente_Result" >
+          <Property Type="Int32" Name="idCompras" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" />
+          <Property Type="String" Name="Total" Nullable="false" />
+          <Property Type="Int32" Name="Rechazo" Nullable="false" />
+          <Property Type="Int32" Name="Activo" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ListadoComprasEmpresa_Result" >
+          <Property Type="Int32" Name="idCompras" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" />
+          <Property Type="String" Name="Total" Nullable="false" />
+          <Property Type="Int32" Name="Rechazo" Nullable="false" />
+          <Property Type="Int32" Name="Activo" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IRagazziModelStoreContainer" CdmEntityContainer="IRagazziEntities" >
+          <FunctionImportMapping FunctionImportName="TodasCategorias" FunctionName="IRagazziModel.Store.TodasCategorias">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.TodasCategorias_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertCategoria" FunctionName="IRagazziModel.Store.InsertCategoria" />
+          <FunctionImportMapping FunctionImportName="UpdateCategoria" FunctionName="IRagazziModel.Store.UpdateCategoria" />
+          <FunctionImportMapping FunctionImportName="GetCategoriasId" FunctionName="IRagazziModel.Store.GetCategoriasId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetCategoriasId_Result">
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCotegorias" FunctionName="IRagazziModel.Store.GetCotegorias">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetCotegorias_Result">
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetFormaDePago" FunctionName="IRagazziModel.Store.GetFormaDePago">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetFormaDePago_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetFormaDePagoId" FunctionName="IRagazziModel.Store.GetFormaDePagoId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetFormaDePagoId_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertFormaDepago" FunctionName="IRagazziModel.Store.InsertFormaDepago" />
+          <FunctionImportMapping FunctionImportName="UpdateFormaDePago" FunctionName="IRagazziModel.Store.UpdateFormaDePago" />
+          <FunctionImportMapping FunctionImportName="InsertProducto" FunctionName="IRagazziModel.Store.InsertProducto" />
+          <FunctionImportMapping FunctionImportName="GetProducto" FunctionName="IRagazziModel.Store.GetProducto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetProducto_Result">
+                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetProductoID" FunctionName="IRagazziModel.Store.GetProductoID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetProductoID_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateProductos" FunctionName="IRagazziModel.Store.UpdateProductos" />
+          <FunctionImportMapping FunctionImportName="GetCliente" FunctionName="IRagazziModel.Store.GetCliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetCliente_Result" >
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetClienteLogin" FunctionName="IRagazziModel.Store.GetClienteLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetClienteLogin_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertCliente" FunctionName="IRagazziModel.Store.InsertCliente" />
+          <FunctionImportMapping FunctionImportName="UpdateCliente" FunctionName="IRagazziModel.Store.UpdateCliente" />
+          <FunctionImportMapping FunctionImportName="UpdateUbicaion" FunctionName="IRagazziModel.Store.UpdateUbicaion" />
+          <FunctionImportMapping FunctionImportName="GetEmpresaLogin" FunctionName="IRagazziModel.Store.GetEmpresaLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetEmpresaLogin_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetEmpresas" FunctionName="IRagazziModel.Store.GetEmpresas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetEmpresas_Result">
+                <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Rugro" ColumnName="Rugro" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertEmpresa" FunctionName="IRagazziModel.Store.InsertEmpresa" />
+          <FunctionImportMapping FunctionImportName="UpdateEmpresa" FunctionName="IRagazziModel.Store.UpdateEmpresa" />
+          <FunctionImportMapping FunctionImportName="InsertCompras" FunctionName="IRagazziModel.Store.InsertCompras" />
+          <FunctionImportMapping FunctionImportName="InsertDetalleCompras" FunctionName="IRagazziModel.Store.InsertDetalleCompras" />
+          <FunctionImportMapping FunctionImportName="UpdateCompras" FunctionName="IRagazziModel.Store.UpdateCompras" />
+          <FunctionImportMapping FunctionImportName="GetUltimaCompra" FunctionName="IRagazziModel.Store.GetUltimaCompra" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetUltimaCompar_Result">
+                <ScalarProperty Name="idCompras" ColumnName="idCompras" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetEmpreProducIdEmpresa" FunctionName="IRagazziModel.Store.GetEmpreProducIdEmpresa">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.GetEmpreProducIdEmpresa_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertEmpreProduc" FunctionName="IRagazziModel.Store.InsertEmpreProduc" />
+          <FunctionImportMapping FunctionImportName="ListadoProductoCliente" FunctionName="IRagazziModel.Store.ListadoProductoCliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.ListadoProductoCliente_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateEmpreProduc" FunctionName="IRagazziModel.Store.UpdateEmpreProduc" />
+          <FunctionImportMapping FunctionImportName="ListadoComprasCliente" FunctionName="IRagazziModel.Store.ListadoComprasCliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.ListadoComprasCliente_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ListadoComprasEmpresa" FunctionName="IRagazziModel.Store.ListadoComprasEmpresa">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IRagazziModel.ListadoComprasEmpresa_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
